@@ -10,7 +10,7 @@ Brute Force Attack on Facebook Accounts
 
 * git clone https://github.com/AngelSecurityTeam/BluForce-FB
 
-* cd BlueForce-FB
+* cd BluForce-FB
 
 * pip2 install mechanize
 
@@ -28,7 +28,7 @@ Brute Force Attack on Facebook Accounts
 
 * git clone https://github.com/AngelSecurityTeam/BluForce-FB
 
-* cd BlueForce-FB
+* cd BluForce-FB
 
 * pip install mechanize
 
