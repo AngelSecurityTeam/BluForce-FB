@@ -8,7 +8,7 @@ Brute Force Attack on Facebook Accounts
 
 * apt-get install git
 
-* git clone https://github.com/AngelSecurityTeam/BlueForce-FB
+* git clone https://github.com/AngelSecurityTeam/BluForce-FB
 
 * cd BlueForce-FB
 
@@ -16,7 +16,7 @@ Brute Force Attack on Facebook Accounts
 
 * python2 bluforcefb.py
 
-<img src="https://github.com/AngelSecurityTeam/BlueForce-FB/blob/master/foto_blueforce-fb.png">
+<img src="https://github.com/AngelSecurityTeam/BluForce-FB/blob/master/foto_blueforce-fb.png">
 
 <h3> TERMUX : </h3>
 
@@ -26,7 +26,7 @@ Brute Force Attack on Facebook Accounts
 
 * pkg install git
 
-* git clone https://github.com/AngelSecurityTeam/BlueForce-FB
+* git clone https://github.com/AngelSecurityTeam/BluForce-FB
 
 * cd BlueForce-FB
 
