@@ -10,11 +10,11 @@ Brute Force Attack on Facebook Accounts
 
 * git clone https://github.com/AngelSecurityTeam/BlueForce-FB
 
-* cd ZemtiBook
+* cd BlueForce-FB
 
 * pip2 install mechanize
 
-* python2 zemtibook.py
+* python2 bluforcefb.py
 
 <img src="https://github.com/AngelSecurityTeam/BlueForce-FB/blob/master/foto_blueforce-fb.png">
 
@@ -28,7 +28,7 @@ Brute Force Attack on Facebook Accounts
 
 * git clone https://github.com/AngelSecurityTeam/BlueForce-FB
 
-* cd ZemtiBook
+* cd BlueForce-FB
 
 * pip install mechanize
 
@@ -36,4 +36,4 @@ Brute Force Attack on Facebook Accounts
 
 * pip3 install mechanize
 
-* python2 zemtibook.py
+* python2 bluforcefb.py
