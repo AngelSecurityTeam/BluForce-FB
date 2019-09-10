@@ -8,7 +8,7 @@ Brute Force Attack on Facebook Accounts
 
 * apt-get install git
 
-* git clone 
+* git clone https://github.com/AngelSecurityTeam/BlueForce-FB
 
 * cd ZemtiBook
 
@@ -26,7 +26,7 @@ Brute Force Attack on Facebook Accounts
 
 * pkg install git
 
-* git clone 
+* git clone https://github.com/AngelSecurityTeam/BlueForce-FB
 
 * cd ZemtiBook
 
