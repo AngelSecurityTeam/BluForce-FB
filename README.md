@@ -1,4 +1,4 @@
-# BlueForce-FB
+# BluForce-FB
 Brute Force Attack on Facebook Accounts
 
 
