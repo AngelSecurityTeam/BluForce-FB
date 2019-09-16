@@ -4,7 +4,7 @@ Brute Force Attack on Facebook Accounts
 
 <h3> Mode Of Execution: </h3>
 
-* apt-get install python2
+* apt-get install python2a
 
 * apt-get install git
 
