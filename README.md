@@ -1,5 +1,5 @@
 # BluForce-FB
-Brute Force Attack on Facebook Accountsa
+Brute Force Attack on Facebook Accounts
 
 
 <h3> Mode Of Execution: </h3>
