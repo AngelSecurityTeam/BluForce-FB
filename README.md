@@ -6,7 +6,7 @@ Brute Force Attack on Facebook Accounts
 
 * apt-get install python2
 
-* apt-get install gits
+* apt-get install git
 
 * git clone https://github.com/AngelSecurityTeam/BluForce-FB
 
