@@ -18,5 +18,7 @@ Brute Force Attack on Facebook Accounts
 
 <img src="https://github.com/AngelSecurityTeam/BluForce-FB/blob/master/foto_blueforce-fb.png">
 
+<h3> Paypal donations: </h3>
 
+* https://www.paypal.me/AngelSecurityTeam
 
