@@ -1,6 +1,12 @@
 # BluForce-FB
-Brute Force Attack on Facebook Accounts
 
+Brute Force Attack on Facebook Accounts
+----------------------------
+Note: EMAIL = ID = PHONE 
+----------------------------
+--------------------------------------------------------------
+what is my Facebook ID :  https://es.piliapp.com/facebook/id/
+--------------------------------------------------------------
 
 <h3> Mode Of Execution: </h3>
 
