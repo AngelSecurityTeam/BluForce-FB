@@ -1,30 +1,5 @@
-# BluForce-FB
+The real code behind a "facebook hacking script". It popped up on my github homepage and the code was spooky so I decided to figure out what was really going on....
 
-Brute Force Attack on Facebook Accounts
-----------------------------
-Note: EMAIL = ID = PHONE 
-----------------------------
---------------------------------------------------------------
-what is my Facebook ID :  https://es.piliapp.com/facebook/id/
---------------------------------------------------------------
 
-<h3> Mode Of Execution: </h3>
 
-* apt-get install python2
-
-* apt-get install git
-
-* git clone https://github.com/AngelSecurityTeam/BluForce-FB
-
-* cd BluForce-FB
-
-* pip2 install mechanize
-
-* python2 bluforcefb.py
-
-<img src="https://github.com/AngelSecurityTeam/BluForce-FB/blob/master/foto_blueforce-fb.png">
-
-<h3> Paypal donations: </h3>
-
-* https://www.paypal.me/AngelSecurityTeam
-
+This code is stupid
